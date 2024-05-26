@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-//    id("maven-publish")
+    id("maven-publish")
 }
 
 android {
@@ -44,20 +44,16 @@ dependencies {
 }
 
 
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            create<MavenPublication>("maven"){
-//
-//                groupId="com.github.aygunbinici"
-//                artifactId="math-library"
-//                version="1.0"
-//
-//                from(components["release"])
-//
-//
-//            }
-//
-//        }
-//    }
-//}
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                from(components["release"])
+
+                groupId = "com.github.aygunbinici"
+                artifactId = "math-library"
+                version = "1.0"
+            }
+        }
+    }
+}
