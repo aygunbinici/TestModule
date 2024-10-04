@@ -54,12 +54,12 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("maven") {
+            create<MavenPublication>("mavenTest") {
                 from(components["release"])
 
                 groupId = "com.github.aygunbinici"
-                artifactId = "math-library"
-                version = "1.9"
+                artifactId = "aygun-test"
+                version = "1.0"
             }
         }
         repositories {
