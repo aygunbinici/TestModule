@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.ayguntest.Aygun
 import com.example.mathlibrary.MathLibrary
 
 class MainActivity : AppCompatActivity() {
@@ -27,5 +28,8 @@ class MainActivity : AppCompatActivity() {
         Log.d("MATH TOPLAMA",topla.toString())
         Log.d("MATH CIKARMA",cikar.toString())
         Log.d("MATH CARPMA",carp.toString())
+
+        val aygun =Aygun()
+        aygun.nextPage(this)
     }
 }
