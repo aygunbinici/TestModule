@@ -1,6 +1,15 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    `maven-publish`
 }
 
 android {
@@ -41,3 +50,21 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                from(components["release"])
+
+                groupId = "com.github.aygunbinici"
+                artifactId = "math-library"
+                version = "1.9"
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+}
+
