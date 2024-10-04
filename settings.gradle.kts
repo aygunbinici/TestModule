@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "TestModule"
 include(":app")
 include(":mathLibrary")
+include(":aygunTest")
