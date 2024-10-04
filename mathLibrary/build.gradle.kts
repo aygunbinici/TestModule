@@ -16,6 +16,7 @@ plugins {
 
 android {
     namespace = "com.example.mathlibrary"
+    namespace = "package com.example.ayguntest"
     compileSdk = 34
 
     defaultConfig {
@@ -60,6 +61,13 @@ afterEvaluate {
                 groupId = "com.github.aygunbinici"
                 artifactId = "math-library"
                 version = "1.9"
+            }
+            create<MavenPublication>("mavenTest") {
+                from(components["release"])
+
+                groupId = "com.github.aygunbinici"
+                artifactId = "aygun-test"
+                version = "1.0"
             }
         }
         repositories {
