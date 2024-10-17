@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.ayguntest.Aygun
+import com.example.customcomponentmodule.CustomComponentTest
 import com.example.mathlibrary.MathLibrary
 
 class MainActivity : AppCompatActivity() {
@@ -31,5 +32,6 @@ class MainActivity : AppCompatActivity() {
 
         val aygun =Aygun()
         aygun.nextPage(this)
+        CustomComponentTest().test(this)
     }
 }
